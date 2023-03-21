@@ -1,7 +1,7 @@
+import styled from "@emotion/styled";
 import { Badge, Box, Divider, IconButton, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import NotificationIcon from "../icons/NotificationIcon";
-import styled from "@emotion/styled";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -9,6 +9,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     top: 20,
     padding: "0 5px",
     backgroundColor: theme.palette.red,
+    color: "white",
   },
 }));
 
@@ -22,17 +23,17 @@ const Header = ({ notifications }) => {
           paddingBottom: "20px",
         }}
       >
-        <div>
+        <Box>
           <Typography variant="h3" component="h1" fontWeight={400}>
             Welcome
           </Typography>
           <Typography variant="p" color="lightGrey">
             Your current sales auction and activity.
           </Typography>
-        </div>
+        </Box>
 
         <IconButton>
-          <StyledBadge badgeContent={notifications} color="error">
+          <StyledBadge badgeContent={notifications}>
             <NotificationIcon />
           </StyledBadge>
         </IconButton>

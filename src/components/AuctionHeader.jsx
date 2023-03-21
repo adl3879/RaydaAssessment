@@ -4,8 +4,13 @@ import Profile from "../assets/content.png";
 import DotIcon from "../icons/Dot";
 import Like from "../icons/Like";
 import Button from "./Button";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 function AuctionHeader() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <Box paddingY="20px">
       <Box
@@ -18,7 +23,6 @@ function AuctionHeader() {
         }}
       >
         <Box
-          bgcolor="cadetblue"
           height={192}
           sx={{
             backgroundImage: `url(${Gradient})`,
@@ -27,24 +31,20 @@ function AuctionHeader() {
             borderRadius: 3,
           }}
         ></Box>
-        <Box display="flex" padding="16px" gap={2} position="relative">
-          <Box sx={{ flexBasis: "12%" }}>
-            <img
-              style={{ position: "absolute", top: -50 }}
-              src={Profile}
-              alt="profile"
-            />
+        <Box display="flex" padding="16px" position="relative" flexWrap="wrap">
+          <Box flexBasis={matches ? "10%" : "20%"}>
+            <Box position="absolute" top={-50}>
+              <img
+                src={Profile}
+                alt="profile"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </Box>
           </Box>
 
           <Box flex={1}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginBottom: 2,
-              }}
-            >
-              <Typography variant="h4">
+            <Box display="flex" justifyContent="space-between" flexWrap="wrap">
+              <Typography variant="h5" fontWeight={500}>
                 Starts in: 3 days : 2 hours : 24 minutes{" "}
               </Typography>
 
