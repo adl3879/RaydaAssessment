@@ -9,7 +9,7 @@ import { useTheme } from "@mui/material/styles";
 
 function AuctionHeader() {
   const theme = useTheme();
-  const phone = useMediaQuery(theme.breakpoints.up("sm"));
+  const md = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Box paddingY="20px">
@@ -39,7 +39,7 @@ function AuctionHeader() {
           <Box flexBasis={{ xs: 100, md: 180 }}>
             <Box
               sx={{
-                transform: phone ? "translateY(-50px)" : "translateY(-70px)",
+                transform: md ? "translateY(-50px)" : "translateY(-70px)",
                 position: "absolute",
               }}
             >

@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <Container maxWidth={1600} sx={{ padding: 1 }}>
+    <Container maxWidth={1600} sx={{ padding: 1, mb: 8 }}>
       <Header notifications={2} />
       <AuctionHeader />
       <Box

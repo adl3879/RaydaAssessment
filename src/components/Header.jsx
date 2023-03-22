@@ -16,13 +16,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const Header = ({ notifications }) => {
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          paddingBottom: "20px",
-        }}
-      >
+      <Box paddingBottom={2} display="flex" justifyContent="space-between">
         <Box>
           <Typography variant="h3" component="h1" fontWeight={400}>
             Welcome
