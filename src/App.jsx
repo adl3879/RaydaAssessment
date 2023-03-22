@@ -49,12 +49,12 @@ function App() {
   };
 
   return (
-    <Container maxWidth={1600}>
+    <Container maxWidth={1600} sx={{ padding: 1 }}>
       <Header notifications={2} />
       <AuctionHeader />
       <Box
         sx={{
-          padding: "24px",
+          padding: { xs: 2, md: "24px" },
           border: "1px solid #EAECF0",
           borderRadius: "12px",
           boxShadow:

@@ -9,7 +9,7 @@ import { useTheme } from "@mui/material/styles";
 
 function AuctionHeader() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("md"));
+  const phone = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <Box paddingY="20px">
@@ -31,19 +31,29 @@ function AuctionHeader() {
             borderRadius: 3,
           }}
         ></Box>
-        <Box display="flex" padding="16px" position="relative" flexWrap="wrap">
-          <Box flexBasis={matches ? "10%" : "20%"}>
-            <Box position="absolute" top={-50}>
-              <img
-                src={Profile}
-                alt="profile"
-                style={{ width: "100%", height: "auto" }}
-              />
+        <Box
+          display="flex"
+          padding={{ md: 2 }}
+          flexDirection={{ xs: "column", md: "row" }}
+        >
+          <Box flexBasis={{ xs: 100, md: 180 }}>
+            <Box
+              sx={{
+                transform: phone ? "translateY(-50px)" : "translateY(-70px)",
+                position: "absolute",
+              }}
+            >
+              <img src={Profile} alt="profile" />
             </Box>
           </Box>
 
           <Box flex={1}>
-            <Box display="flex" justifyContent="space-between" flexWrap="wrap">
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              flexWrap="wrap"
+              gap={1}
+            >
               <Typography variant="h5" fontWeight={500}>
                 Starts in: 3 days : 2 hours : 24 minutes{" "}
               </Typography>
@@ -51,6 +61,7 @@ function AuctionHeader() {
               <Button
                 label="Accept Invite"
                 variant="outlined"
+                sx={{ marginBottom: 2 }}
                 startIcon={<Like />}
               />
             </Box>

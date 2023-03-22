@@ -13,14 +13,15 @@ const StyledButton = styled(MUIButton)(({ theme }) => ({
   },
 }));
 
-const Button = ({ label, variant, startIcon }) => (
-  <StyledButton {...{ variant, startIcon }}>{label}</StyledButton>
+const Button = ({ label, variant, startIcon, sx }) => (
+  <StyledButton {...{ variant, startIcon, sx }}>{label}</StyledButton>
 );
 
 Button.propTypes = {
   label: PropTypes.string,
   variant: PropTypes.string,
   startIcon: PropTypes.element,
+  sx: PropTypes.object,
 };
 
 export default Button;

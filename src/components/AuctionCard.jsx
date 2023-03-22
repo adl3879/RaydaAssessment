@@ -4,7 +4,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Divider,
   Typography,
 } from "@mui/material";
@@ -15,13 +14,13 @@ const AuctionCard = ({ name, title, bid, image }) => {
     return name
       .split(" ")
       .map((n) => n[0])
-      .join(".");
+      .join("");
   };
 
   return (
     <Card
       sx={{
-        padding: "20px",
+        padding: 3,
         paddingBottom: 0,
         border: "1px solid #D0D5DD",
         boxShadow: "none",
@@ -29,15 +28,14 @@ const AuctionCard = ({ name, title, bid, image }) => {
       }}
     >
       <Box>
-        <CardMedia
-          component="img"
-          height="140"
-          alt="green iguana"
-          {...{ image }}
-        />
+        <Box bgcolor="grey100" padding={3} borderRadius={3} textAlign="center">
+          <img src={image} alt={title} />
+        </Box>
         <CardContent>
           <Box display="flex" alignItems="center" gap={2}>
-            <Avatar>{getInitialsFromName(name)}</Avatar>
+            <Avatar sx={{ color: "lightGrey", bgcolor: "grey100" }}>
+              {getInitialsFromName(name)}
+            </Avatar>
             <Typography variant="p" fontWeight={500}>
               {name} <Typography component="span">(Highest Bidder)</Typography>
             </Typography>
@@ -58,7 +56,7 @@ const AuctionCard = ({ name, title, bid, image }) => {
             style={{
               textTransform: "capitalize",
               backgroundColor: "#004CCC",
-              padding: "10px",
+              padding: 12,
             }}
           >
             Add to wishlist
