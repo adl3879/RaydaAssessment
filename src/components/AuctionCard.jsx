@@ -21,9 +21,10 @@ const AuctionCard = ({ name, title, bid, image }) => {
   return (
     <Card
       sx={{
-        maxWidth: 345,
-        padding: "24px",
-        border: "1px solid #EAECF0",
+        padding: "20px",
+        paddingBottom: 0,
+        border: "1px solid #D0D5DD",
+        boxShadow: "none",
         borderRadius: "12px",
       }}
     >
@@ -35,19 +36,33 @@ const AuctionCard = ({ name, title, bid, image }) => {
           {...{ image }}
         />
         <CardContent>
-          <Box display="flex" gap={2}>
+          <Box display="flex" alignItems="center" gap={2}>
             <Avatar>{getInitialsFromName(name)}</Avatar>
             <Typography variant="p" fontWeight={500}>
-              {name}
-              <Typography>(Highest Bidder)</Typography>
+              {name} <Typography component="span">(Highest Bidder)</Typography>
             </Typography>
           </Box>
-          <Typography variant="h6">{title}</Typography>
-          <Typography>
-            Current Bid: <Typography>{bid}</Typography>
+          <Typography variant="body1" marginY={2} fontWeight={500}>
+            {title}
           </Typography>
-          <Divider />
-          <Button color="primary">Add to wishlist</Button>
+          <Typography>
+            Current Bid: <Typography component="span">{bid}</Typography>
+          </Typography>
+          <Box marginY={2}>
+            <Divider />
+          </Box>
+          <Button
+            variant="contained"
+            disableElevation
+            fullWidth
+            style={{
+              textTransform: "capitalize",
+              backgroundColor: "#004CCC",
+              padding: "10px",
+            }}
+          >
+            Add to wishlist
+          </Button>
         </CardContent>
       </Box>
     </Card>
