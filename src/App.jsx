@@ -31,14 +31,24 @@ function App() {
                   border="1px solid #EAECF0"
                   borderRadius="12px"
                 >
-                  <Skeleton variant="rectangular" height={140} width="100%" />
+                  <Skeleton
+                    variant="rectangular"
+                    height={200}
+                    width="100%"
+                    sx={{ borderRadius: 3, bgcolor: "grey100" }}
+                  />
                   <Skeleton
                     variant="rectangular"
                     width="100%"
                     height={200}
-                    sx={{ borderRadius: "0 0 3px 3px" }}
+                    sx={{ borderRadius: "0 0 3px 3px", bgcolor: "grey100" }}
                   />
-                  <Skeleton variant="rectangular" height={40} width="100%" />
+                  <Skeleton
+                    variant="rectangular"
+                    height={40}
+                    width="100%"
+                    sx={{ bgcolor: "grey100" }}
+                  />
                 </Stack>
               )}
             </Grid>
